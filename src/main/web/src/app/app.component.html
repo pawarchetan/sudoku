@@ -1,0 +1,9 @@
+<table class="sudoku-board">
+  <tr *ngFor="let row of board; let i = index; trackBy: trackByIndex" class="sudoku-row">
+    <td *ngFor="let cell of row; let j = index; trackBy: trackByIndex" class="sudoku-cell">
+      <input type="number" min="0" max="9" [(ngModel)]="board[i][j]" (input)="handleInput(i, j, $event)" class="sudoku-input">
+    </td>
+  </tr>
+</table>
+<div *ngIf="!isValid" class="invalid-notification">Sudoku is invalid</div>
+<div *ngIf="isValid" class="valid-notification">Sudoku is valid</div>

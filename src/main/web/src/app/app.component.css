@@ -1,0 +1,43 @@
+table {
+    margin: 1em auto;
+}
+
+td {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+td:first-child {
+    border-left: solid;
+}
+
+td:nth-child(3n) {
+    border-right: solid;
+}
+
+tr:first-child td {
+    border-top: solid;
+}
+
+tr:nth-child(3n) td {
+    border-bottom: solid;
+}
+
+.invalid-notification {
+    color: red;
+    text-align: center;
+}
+
+.valid-notification {
+    color: green;
+    text-align: center;
+}
+
+.sudoku-input {
+    font-size: 20pt;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border: none;
+}
