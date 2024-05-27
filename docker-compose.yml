@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  sudoku-backend:
+    image: sudoku-backend
+    container_name: sudoku-backend
+    build:
+      context: .
+      dockerfile: Backend.Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - sudoku-network
+  sudoku-frontend:
+    image: sudoku-frontend
+    container_name: sudoku-frontend
+    build:
+      context: .
+      dockerfile: Frontend.Dockerfile
+    ports:
+      - "4200:4200"
+    depends_on:
+      - sudoku-backend
+    networks:
+      - sudoku-network
+networks:
+  sudoku-network:
